@@ -35,6 +35,10 @@ ext {
             test     : [
                     "org.springframework.boot:spring-boot-starter-test:${versions.springBootVersion}"
 
+            ],
+            lombok   : [
+                    "org.projectlombok:lombok:1.18.2"
+
             ]
     ]
 }
