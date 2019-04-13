@@ -2,6 +2,7 @@ package com.qian.manager.service;
 
 import com.qian.entity.Product;
 import com.qian.entity.enums.ProductStatus;
+import com.qian.manager.error.ErrorEnum;
 import com.qian.manager.repositories.ProductRepository;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -82,7 +83,7 @@ public class ProduceService {
     }
 
     private void checkProduct(Product product) {
-        Assert.notNull(product.getId(), "编号不可为空");
+        Assert.notNull(product.getId(), ErrorEnum.ID_NOT_NULL.getCode());
         Assert.isTrue(BigDecimal.ZERO.compareTo(product.getRewardRate()) < 0 && BigDecimal.valueOf(30).compareTo
                 (product.getRewardRate()) >= 0, "收益率范围出错");
         Assert.isTrue(BigDecimal.valueOf(product.getStepAmount().longValue()).compareTo(product.getStepAmount()) ==

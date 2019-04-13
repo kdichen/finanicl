@@ -1,6 +1,7 @@
 package com.qian.entity;
 
 import io.swagger.annotations.ApiModelProperty;
+import lombok.AllArgsConstructor;
 import lombok.Data;
 
 import javax.persistence.Entity;
@@ -16,6 +17,7 @@ import java.util.Date;
  */
 @Data
 @Entity
+@AllArgsConstructor
 public class Product {
 
     @Id
@@ -47,4 +49,14 @@ public class Product {
     private Date updateAt;
     private String createUser;
     private String updateUser;
+
+    public Product(String id, String name, String status, BigDecimal thresholdAmount, BigDecimal stepAmount,
+                   BigDecimal rewardRate) {
+        this.id = id;
+        this.name = name;
+        this.status = status;
+        this.thresholdAmount = thresholdAmount;
+        this.stepAmount = stepAmount;
+        this.rewardRate = rewardRate;
+    }
 }

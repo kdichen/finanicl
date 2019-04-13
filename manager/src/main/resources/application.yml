@@ -1,9 +1,11 @@
 spring:
+  jackson:
+    date-format: yyyy-MM-dd HH:mm:ss
+    time-zone: GMT+8
   datasource:
     url: jdbc:mysql://localhost:3306/manager?user=root&password=admin&useUnicode=true&characterEncoding=utf-8
   jpa:
     show-sql: true
 server:
-  servlet:
-    context-path: /manager
+  context-path: /manager
   port: 8081
