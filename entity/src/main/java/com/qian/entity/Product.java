@@ -1,11 +1,13 @@
 package com.qian.entity;
 
+import com.fasterxml.jackson.annotation.JsonFormat;
 import io.swagger.annotations.ApiModelProperty;
-import lombok.AllArgsConstructor;
 import lombok.Data;
+import lombok.NoArgsConstructor;
 
 import javax.persistence.Entity;
 import javax.persistence.Id;
+import java.io.Serializable;
 import java.math.BigDecimal;
 import java.util.Date;
 
@@ -17,8 +19,8 @@ import java.util.Date;
  */
 @Data
 @Entity
-@AllArgsConstructor
-public class Product {
+@NoArgsConstructor
+public class Product implements Serializable {
 
     @Id
     private String id;
@@ -45,7 +47,9 @@ public class Product {
      */
     private BigDecimal rewardRate;
     private String memo;
+    @JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "yyyy-MM-dd HH:mm:ss", timezone = "GMT+8")
     private Date createAt;
+    @JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "yyyy-MM-dd HH:mm:ss", timezone = "GMT+8")
     private Date updateAt;
     private String createUser;
     private String updateUser;
