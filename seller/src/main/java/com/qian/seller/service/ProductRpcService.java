@@ -40,7 +40,7 @@ public class ProductRpcService implements ApplicationListener<ContextRefreshedEv
     /**
      * 查询单个产品
      *
-     * @param id
+     * @param id 商品ID
      * @return
      */
     public Product findOne(String id) {
@@ -64,7 +64,7 @@ public class ProductRpcService implements ApplicationListener<ContextRefreshedEv
      *
      * @param event 产品状态对象
      */
-//    @JmsListener(destination = MQ_DESTINATION)
+    //    @JmsListener(destination = MQ_DESTINATION)
     void updateCache(ProductStatusEvent event) {
         log.info("receive event:{}", event);
         // 如果接受到消息,清空缓存再读取
