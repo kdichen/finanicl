@@ -1,7 +1,7 @@
 package com.qian.manager.controller;
 
 import com.qian.entity.Product;
-import com.qian.manager.service.ProduceService;
+import com.qian.manager.service.ProductService;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
@@ -24,7 +24,7 @@ import java.util.List;
 public class ProductController {
 
     @Autowired
-    private ProduceService service;
+    private ProductService service;
 
     @PostMapping("/addProduct")
     public Product addProduct(@RequestBody Product product) {

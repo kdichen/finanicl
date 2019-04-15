@@ -16,7 +16,7 @@ ext {
                     "mysql:mysql-connector-java:5.1.29"
             ],
             jsonrpc  : [
-                    "com.imooc.jsonrpc4j:jsonrpc4j:1.5.1"
+                    "com.qian.briandilley.jsonrpc4j:jsonrpc4j:1.5.3"
             ],
             swagger  : [
                     "io.springfox:springfox-swagger2:2.7.0",

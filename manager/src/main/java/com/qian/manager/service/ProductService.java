@@ -25,7 +25,7 @@ import java.util.List;
 
 @Slf4j
 @Service
-public class ProduceService {
+public class ProductService {
 
     @Autowired
     private ProductRepository repository;
