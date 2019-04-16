@@ -11,7 +11,8 @@ rpc:
     url:  http://localhost:8081/manager
     basePackage: com.qian.api
 
-#hazelcats管理端账号密码: qian/ChenQian1
+
+# 添加https证书 hazelcats管理端账号密码: qian/ChenQian1
 spring:
   cache:
     type: hazelcast
