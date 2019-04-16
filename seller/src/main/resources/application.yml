@@ -1,5 +1,6 @@
 server:
-  context-path: /seller
+  servlet:
+    context-path: /seller
   port: 8082
 
 logging:
@@ -19,10 +20,10 @@ spring:
     packages:
       trust-all: true
   datasource:
-#    primary:
-    url: jdbc:mysql://localhost:3306/seller?user=root&password=admin&useUnicode=true&characterEncoding=utf-8
-#    backup:
-#      url: jdbc:mysql://localhost:3306/seller-backup?user=root&password=admin&useUnicode=true&characterEncoding=utf-8
+    primary:
+      url: jdbc:mysql://localhost:3306/seller?user=root&password=admin&useUnicode=true&characterEncoding=utf-8
+    backup:
+      url: jdbc:mysql://localhost:3306/seller-backup?user=root&password=admin&useUnicode=true&characterEncoding=utf-8
   jpa:
     show-sql: true
 swagger:
