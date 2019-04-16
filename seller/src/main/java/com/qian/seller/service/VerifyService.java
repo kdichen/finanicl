@@ -39,6 +39,26 @@ public class VerifyService {
     private static DateFormat DAY_FORMAT = new SimpleDateFormat("yyyy-MM-dd");
     private static DateFormat DATETIME_FORMAT = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
 
+    /**
+     * 对账
+     *
+     * @param chanId
+     * @param day
+     * @return
+     */
+    public List<String> verifyOrder(String chanId, Date day) {
+        List<String> errors = new ArrayList<>();
+        Date start = getStartOfDay(day);
+        Date end = add24Hours(day);
+        List<String> excessOrders = verifyRepository.queryExcessOrders(chanId, start, end);
+        List<String> missOrders = verifyRepository.queryMissOrders(chanId, start, end);
+        List<String> queryDifferentOrders = verifyRepository.queryDifferentOrders(chanId, start, end);
+        // 用 , 分割,把所有订单号连接成字符串
+        errors.add("长款订单号:" + String.join(",", excessOrders));
+        errors.add("漏单订单号:" + String.join(",", missOrders));
+        errors.add("不一致订单号:" + String.join(",", queryDifferentOrders));
+        return errors;
+    }
 
     /**
      * 保存渠道订单数据
