@@ -33,8 +33,8 @@ public class RsaUtilTest {
 
     @Test
     public void signTest() {
-        String text = "{\"amount\":10,\"chanId\":\"11\",\"chanUserId\":\"123\",\"createAt\":\"2019-12-364 15:07:41\"," +
-                "\"memo\":\"11\",\"outerOrderId\":\"10001\",\"productId\":\"T001\"}";
+        String text = "{\"amount\":10,\"chanId\":\"111\",\"chanUserId\":\"112\",\"createAt\":\"2019-12-364 " +
+                "02:08:42\",\"memo\":\"1001\",\"outerOrderId\":\"T001\",\"productId\":\"T001\"}";
         String sign = RsaUtil.sign(text, privateKey);
         System.out.println(sign);
         // 验签结果

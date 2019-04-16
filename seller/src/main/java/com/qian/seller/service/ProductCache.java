@@ -54,7 +54,7 @@ public class ProductCache {
      * @param product 商品信息
      * @return
      */
-    @CachePut(cacheNames = CACHE_NAME, key = "#.product.id")
+    @CachePut(cacheNames = CACHE_NAME, key = "#product.id")
     public Product putCache(Product product) {
         return product;
 
